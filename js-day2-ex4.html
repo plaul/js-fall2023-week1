@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<br lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Box Example</title>
+</head>
+<body style="font-family: sans-serif;">
+<br>
+
+<select id="car-selector">
+  <!-- Options will be populated by JavaScript -->
+</select>
+</br>
+<h2>Selected Brand</h2>
+
+<h4 id="car-make"></h4>
+</br>
+<div style="margin: 1em 0;">
+
+<div style="border: 1px solid black; border-radius: 5px;padding: 1em;">
+  Reflect on when you would use a <b>select element</b>. For a few (perhaps max 10) or many more possible options.<br>
+  Explain in words that clearly show that you understand what you did to solve this problem
+</div>
+
+
+<script>
+const cars = ["Ford", "WW", "Toyota", "Volvo"];
+const selectElement = document.getElementById('car-selector');
+
+cars.forEach(country => {
+  const option = document.createElement('option');
+  option.value = country;
+  option.textContent = country.toUpperCase();
+  selectElement.appendChild(option);
+});
+
+selectElement.addEventListener('change', (event) => {
+  document.getElementById("car-make").innerText = event.target.value
+});
+</script>
+
+</body>
+</html>

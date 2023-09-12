@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body style="font-family: sans-serif;">
+    <h2>Exercise 3</h2>
+    <ul id="my-ul"></ul>
+    <form>
+        <input id="name-input">
+        <button id="btn-add">Add Name</button>
+        <button id="btn-rm-first">Remove First</button>
+        <button id="btn-rm-last">Remove Last</button>
+    </form>
+    <div style="margin: 1em 0;">
+        <a href="/">back</a>
+    </div>
+
+    <div style="border: 1px solid black; border-radius: 5px;padding: 1em;">
+        Replace this with your explanation of the concepts</br>
+        <ul>
+            <li>Where and why you used the event-method <code>preventDefault()</code></li>
+            <li>Even if not done in this exercise, what do you have to be aware of when using the innerHTML field</li>
+            <li>How did you change the DOM-list with all the names when you added, removed a name?<br>
+                 By manipulating a single DOM element, or by rebuilding the whole UL using the new version of the data</li>
+        </ul>
+        Feel free to write in danish
+    </div>
+    
+    <script>
+        const names = ["Lars", "Peter", "Janne", "Susanne"]
+
+        function createListItems() {
+            document.getElementById("my-ul").innerHTML = names.map(name => `<li>${name}</li>`).join("")
+        }
+        createListItems()
+
+        document.getElementById("btn-add").onclick = (evt) => {
+            evt.preventDefault()
+            const newName = document.getElementById("name-input").value
+            names.push(newName)
+            createListItems()
+        }
+        document.getElementById("btn-rm-first").onclick = (evt) => {
+            evt.preventDefault()
+            names.shift()
+            createListItems()
+        }
+        document.getElementById("btn-rm-last").onclick = (evt) => {
+            evt.preventDefault()
+            names.pop()
+            createListItems()
+        }
+
+    </script>
+</body>
+
+</html>

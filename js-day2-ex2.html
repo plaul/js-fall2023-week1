@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ex 2</title>
+    <style>
+        .my-div {
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            margin: 1px;
+        }
+    </style>
+</head>
+
+<body style="font-family: sans-serif;">
+    <h2>Click a box to see its ID </h2>
+    <p>Make sure in your solution to attach the click handler ONE place ONLY (use event bubling)</p>
+    <div id="outer">
+        <div id="id-1" class="my-div"></div>
+        <div id="id-2" class="my-div"></div>
+        <div id="id-3" class="my-div"></div>
+        <div id="id-4" class="my-div"></div>
+        <div id="id-5" class="my-div"></div>
+        <div id="id-6" class="my-div"></div>
+        <div id="id-7" class="my-div"></div>
+        <div id="id-8" class="my-div"></div>
+        <div id="id-9" class="my-div"></div>
+        <div id="id-10" class="my-div"></div>
+    </div>
+    <p id="p-text"></p>
+    <div style="margin: 1em 0;">
+        <a href="/">back</a>
+    </div>
+
+    <div style="border: 1px solid black; border-radius: 5px;padding: 1em;">
+        Replace with a descriptiton that clearly show that you understand the concept of event bubbling, and how you have used it in your solution<br>
+        Feel free to write in danish
+    </div>
+    <script>
+        document.getElementById("outer").onclick = (evt) => {
+            const id = evt.target.id;
+            console.log("Hi from div number: " + id)
+            document.getElementById("p-text").innerText = id;
+
+        }
+    </script>
+</body>
+
+</html>

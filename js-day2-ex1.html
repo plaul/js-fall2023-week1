@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day2</title>
+</head>
+<body style="font-family: sans-serif;">
+<h2>Exercise -1</h2>
+
+<div id="d1" style="width: 100px;margin: 1px;">&nbsp;</div>
+<div id="d2" style="width: 100px;margin: 1px;">&nbsp;</div>
+<div id="d3" style="width: 100px;margin: 1px;">&nbsp;</div>
+<button id="btn">Change Color</button>
+<div style="margin-top: 1em;">
+<a  href="/">back</a>
+</div>
+
+<p>
+  Your Reflections here
+</p>
+<script type="application/javascript">
+  
+  const divs = document.querySelectorAll("div")
+  
+  for(let i = 0; i<3; i++){
+    console.log(divs[i])
+    divs[i].style.backgroundColor = "blue"
+  }
+  document.getElementById("btn").onclick = ()=> {
+    //divs[0].style.backgroundColor = "red"
+    document.querySelector("#d1").style.backgroundColor = "red"
+    divs[1].style.backgroundColor = "green"
+    divs[2].style.backgroundColor = "blue"
+  }
+
+</script>
+</body>
+</html>
