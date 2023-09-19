@@ -34,6 +34,8 @@ const selectElement = document.getElementById('car-selector');
 cars.forEach(country => {
   const option = document.createElement('option');
   option.value = country;
+
+
   option.textContent = country.toUpperCase();
   selectElement.appendChild(option);
 });

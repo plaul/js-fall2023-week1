@@ -20,14 +20,14 @@
 <script type="application/javascript">
   
   const divs = document.querySelectorAll("div")
+
+
   
   for(let i = 0; i<3; i++){
-    console.log(divs[i])
     divs[i].style.backgroundColor = "blue"
   }
   document.getElementById("btn").onclick = ()=> {
-    //divs[0].style.backgroundColor = "red"
-    document.querySelector("#d1").style.backgroundColor = "red"
+    divs[0].style.backgroundColor = "red"
     divs[1].style.backgroundColor = "green"
     divs[2].style.backgroundColor = "blue"
   }
